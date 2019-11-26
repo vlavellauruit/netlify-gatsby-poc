@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
 export const BlogPostTemplate = ({
+  templateKey,
   content,
   contentComponent,
   description,
@@ -56,7 +57,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-
+  console.log(data);
   return (
     <Layout>
       <BlogPostTemplate

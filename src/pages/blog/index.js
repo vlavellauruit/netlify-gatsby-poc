@@ -29,7 +29,7 @@ export default class BlogIndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <BlogRoll templateKeys={['blog-post', 'template-test']} />
+              <BlogRoll />
             </div>
           </div>
         </section>
