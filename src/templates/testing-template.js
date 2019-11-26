@@ -6,10 +6,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-
-
-export const BlogPostTemplate = ({
-  templateKey,
+export const TestingTemplate = ({
   content,
   contentComponent,
   description,
@@ -25,10 +22,9 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-          <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              This is the testing blog template component 
+            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+              This is the testing template component 
             </h1>
-
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
@@ -53,7 +49,7 @@ export const BlogPostTemplate = ({
   )
 }
 
-BlogPostTemplate.propTypes = {
+TestingTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -61,12 +57,12 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const BlogPost = ({ data }) => {
+const TestingPost = ({ data }) => {
   const { markdownRemark: post } = data
   console.log(data);
   return (
     <Layout>
-      <BlogPostTemplate
+      <TestingTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -86,16 +82,16 @@ const BlogPost = ({ data }) => {
   )
 }
 
-BlogPost.propTypes = {
+TestingPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default BlogPost
+export default TestingPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query TestingPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
